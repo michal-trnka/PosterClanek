@@ -62,15 +62,6 @@ Paper formatting, Poster2015, electronic publishing, templates, styles.
 
 %----------------------------------------------------------
 %               HERE WRITE YOUR PAPER
-\section{Osnova}
-1. Intro - co je security, proc je dulezity pro aplikace, proc je stavajici security spatna, jake ekonomicke nevyhody nese, jak husta je security co bere v potaz kontext, ze to ukazu na RBAC
-
-2 - Background - vysvetleni kontextu, co je MAC/DAC, co je RBAC, detailnejs popsat jak kontextova security pomuze jak uzivately, tak provozovately systemu
-
-3 - Related work - z diplomky mam 7 praci, najit dalsi?
-
-4. Vlastni obsah - resit pomoci levelu - popsat svoje reseni (a na RACS nechat to, ze autentizacni metoda je cast kontextu?)
-
 
 \section{Headline of a Section}
 The abstract of the paper is followed by the headline \emph{Keywords}. Below the headline, three to six terms featuring the area of the technical or scientific orientation of the paper have to be given. Use the environment \verb+keywords+
@@ -193,3 +184,4 @@ For one author, one paragraph of the biography is devoted. The \textbf{Name} of 
 \end{authorcv}
 
 \end{document}
+
