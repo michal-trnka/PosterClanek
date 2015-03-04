@@ -71,6 +71,26 @@ Paper formatting, Poster2015, electronic publishing, templates, styles.
 
 4. Vlastni obsah - resit pomoci levelu - popsat svoje reseni (a na RACS nechat to, ze autentizacni metoda je cast kontextu?)
 
+Koment od Tomase:
+1 ma rici co je problem a co vlastne resis, i naznacit co prinese tve reseni
+2. ano, ac mel by jsi stavet na tom ze exituje nejaka obtiz, a jak ji pomohou resit tyto typy zabezpeceni
+3. ok
+4. zde rici i jak to resi problem, jake to ma vyhody a naznacit i omezeni ci co to nedela
+4. pokud lze neco oddelit a nechat to na RACS pak idealni.
+5. shrnuti
+
+\section{Introduction}
+1. odstavec - popsat ze dnes jsou kontextovy aplikace, diky rozvoji mobilnich technologii a tomu ze uzivatele chteji personalizaci
+2. odstavec - ALE odstavec, ze do security se to jeste nedastalo
+3. odstavec - popsat vyhody kontext based security
+4. odstavec - nastinit, ze se to v soucasne dobe resi, ale ne dost cool
+5. odstavec - tuten paper ukaze mozne reseni pomoci udeleni levelu na zaklade kontextu (zminit jednoduchost, implemetovatelnost do stavajicich systemu)
+
+\section{Background}
+1. Popsat ze zabezpeceni aplikaci je stary problem
+2. Popsat/zminit se o MAC/DAC 
+3. Popsat RBAC
+4. Jak kontextove zabezpecene aplikace pomuzou uzivateli+provozovateli
 
 \section{Headline of a Section}
 The abstract of the paper is followed by the headline \emph{Keywords}. Below the headline, three to six terms featuring the area of the technical or scientific orientation of the paper have to be given. Use the environment \verb+keywords+
