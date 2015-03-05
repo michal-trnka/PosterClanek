@@ -80,6 +80,11 @@ Koment od Tomase:
 5. shrnuti
 
 \section{Introduction}
+
+Currently there can be seen move toward context aware application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users.
+
+However securing the applications is done the old way. Mostly users got some roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
+
 1. odstavec - popsat ze dnes jsou kontextovy aplikace, diky rozvoji mobilnich technologii a tomu ze uzivatele chteji personalizaci
 2. odstavec - ALE odstavec, ze do security se to jeste nedastalo
 3. odstavec - popsat vyhody kontext based security
