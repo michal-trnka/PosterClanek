@@ -75,17 +75,25 @@ Application operators and software developers are good aware of the added value 
 
 In this paper I will present solution which extends standard security architecture with context aware elements. This extension is based on giving users security level based on their context. Resources would require user to posses that level in addition to his normal rights to be accessed. That way we can extend any existing security architecture with context aware elements.
 
-1. odstavec - popsat ze dnes jsou kontextovy aplikace, diky rozvoji mobilnich technologii a tomu ze uzivatele chteji personalizaci
-2. odstavec - ALE odstavec, ze do security se to jeste nedastalo
-3. odstavec - popsat vyhody kontext based security
-4. odstavec - nastinit, ze se to v soucasne dobe resi, ale ne dost cool
-5. odstavec - tuten paper ukaze mozne reseni pomoci udeleni levelu na zaklade kontextu (zminit jednoduchost, implemetovatelnost do stavajicich systemu)
-
 \section{Background}
-1. Popsat ze zabezpeceni aplikaci je stary problem
-2. Popsat/zminit se o MAC/DAC 
-3. Popsat RBAC
-4. Jak kontextove zabezpecene aplikace pomuzou uzivateli+provozovateli
+
+Large applications or information systems which has more then one user needs some form of authentication and authorization. Such systems are here for many decades and are almost as old as computers itself. Therefore for many decades there exist problem with security applications and it was solved various ways.
+
+Two of the oldest principles for securing application resources is mandatory access control (MAC) and discretionary access control (DAC). Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
+
+However granting permissions to every user in system is unpractical for larger amount of users. Role based access control provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
+
+Nevertheless those authorization principles and method are very static. They does not reflect the changing state of the system and users. Once they are set they do not take in account any other factors and any fine tuning is if not impossible very difficult.
+
+Context aware security can overcome those difficulties and provide even new experience for user and application operator. Context aware applications are much more personalized then the static ones and same comes for the security. Application can get a lot of information about user from context and therefore it does not annoy user with request for additional information. For example application knows his IP address and therefore does not need to re-verify him. The context is also valuable source of information for application owner. For example he might restrict some IP ranges, days of time, etc to access resources in application. 
+
+Also with the emerge of the context aware application there is naturally need of context aware security. ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs
+
+To illustrate how can context aware security improve applications consider following example. We have a information system in company. To make it more comfortable let users from inner company network access some noncritical resources. But if the user comes from internet or access some sensitive resources he needs to authenticate itself normal way. But not only users would benefit from it. Context aware security can determine suspicious users behavior. For example if users log in to system in short time frame from different parts of world it can rise flag and the incident can be investigated further. Or the company can set some access hours for various resources, to limit possibility of their abuse (for example limit access in non working hours).
+
+\section{Related Work}
+
+something
 
 \section{Osnova}
 1. Intro - co je security, proc je dulezity pro aplikace, proc je stavajici security spatna, jake ekonomicke nevyhody nese, jak husta je security co bere v potaz kontext, ze to ukazu na RBAC
