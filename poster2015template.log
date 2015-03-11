@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.11)  9 MAR 2015 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.11)  11 MAR 2015 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,19 +236,19 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 134.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 134.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Underfull \hbox (badness 1509) in paragraph at lines 154--155
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 150.
+
+Underfull \vbox (badness 7613) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 170--171
 []\OT1/ptm/m/n/10 Descriptions of fig-ures or ta-bles are of the style
  []
 
@@ -260,41 +260,71 @@ Package epstopdf Info: Source file: <obr1.eps>
 (epstopdf)                    size: 20504 bytes
 (epstopdf)             Command: <repstopdf --outfile=obr1-eps-converted-to.pdf 
 obr1.eps>
-(epstopdf)             \includegraphics on input line 173.
+(epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 <obr1-eps-converted-to.pdf, id=15, 606.265pt x 499.8675pt>
 File: obr1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use obr1-eps-converted-to.pdf>
-Package pdftex.def Info: obr1-eps-converted-to.pdf used on input line 173.
+Package pdftex.def Info: obr1-eps-converted-to.pdf used on input line 189.
 (pdftex.def)             Requested size: 606.26352pt x 499.86627pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 195.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 211.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
-
-Underfull \hbox (badness 4569) in paragraph at lines 211--212
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 211.
+ [3 <./obr1-eps-converted-to.pdf>]
+Underfull \hbox (badness 4569) in paragraph at lines 227--228
 []\OT1/ptm/m/n/10 The head-line \OT1/ptm/m/it/10 Ac-knowl-edge-ments \OT1/ptm/m
 /n/10 is of the style
  []
 
-[3 <./obr1-eps-converted-to.pdf>] [4
-
-] (./poster2015template.aux)
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+[4] (./poster2015template.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 1856 strings out of 493109
- 26240 string characters out of 6135009
- 89697 words of memory out of 5000000
- 5285 multiletter control sequences out of 15000+600000
+ 1864 strings out of 493109
+ 26344 string characters out of 6135009
+ 89723 words of memory out of 5000000
+ 5293 multiletter control sequences out of 15000+600000
  36009 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,45p,790b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -312,7 +342,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times
 /utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on poster2015template.pdf (4 pages, 170985 bytes).
+Output written on poster2015template.pdf (4 pages, 174295 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream

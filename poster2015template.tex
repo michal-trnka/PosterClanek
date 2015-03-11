@@ -73,7 +73,7 @@ Applications using context aware security can be much less obtrusive for users. 
 
 Application operators and software developers are good aware of the added value of context aware security. Even there are various proposals how to do context aware security none of them is widely used. Reason why they are not widely used can be that they are either too complicated or they are too innovative and it is hard to incorporate them into existing solutions.
 
-In this paper I will present solution which extends standard security architecture with context aware elements. This extension is based on giving users security level based on their context. Resources would require user to posses that level in addition to his normal rights to be accessed. That way we can extend any existing security architecture with context aware elements.
+In this paper I will present solution which extends standard role based security architecture with context aware elements. This extension is based on giving users security level based on their context. Resources would require user to posses that level in addition to his normal rights to be accessed. That way we can extend any existing security architecture with context aware elements.
 
 \section{Background}
 
@@ -81,7 +81,7 @@ Large applications or information systems which has more then one user needs som
 
 Two of the oldest principles for securing application resources is mandatory access control (MAC) and discretionary access control (DAC). Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
 
-However granting permissions to every user in system is unpractical for larger amount of users. Role based access control provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
+However granting permissions to every user in system is unpractical for larger amount of users. Role based access control (RBAC) provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
 
 Nevertheless those authorization principles and method are very static. They does not reflect the changing state of the system and users. Once they are set they do not take in account any other factors and any fine tuning is if not impossible very difficult.
 
@@ -93,7 +93,23 @@ To illustrate how can context aware security improve applications consider follo
 
 \section{Related Work}
 
-something
+There has been multiple attempts to extend classic role based access control with context-aware elements and make RBAC more fine-grained.
+
+One of the approaches is to add another set of roles to role based access control. Moyer \cite{grbac} proposes creating two additional sets of object roles and environmental roles and tying permissions with trio of roles. Covington \cite{envroles} simplify that to just one additional set of environmental roles. They are hierarchical composed and represent current state of system. Similarly to this approach Seon-Ho \cite{contextroles} suggests additional set of context roles.
+
+Different solution proposes Sladi\'c \cite{contextaccess}. Roles are granted to user after his authentication based on context. That way user can obtain new roles based on context. The idea is further developed by Kulkarni \cite{contextawarerbac} into Context-Aware RBAC. It also allows roles to be granted based on context but there is second layer of authorization architecture which is responsible for granting and revoking roles when the context changes and therefore roles are dynamically reflecting context.
+
+There is also possibility to solve that problem with adding another element not based on roles. Neumann \cite{xorbac} suggests adding context constrains to security policies. When the permission is checked used needs to posses not only the permission for resource (based on his role) but also fulfill context constrains. Similar approach by Most\'efaoui \cite{genericcontext} proposes that security rules should consist of four elements - permission, role, context and authentication method.
+
+Lima \cite{contextlayer} adds another context dimension to current security rules. It would make security policy three dimensional with context, permission and role. Difference from xoRBAC \cite{xorbac} is that it takes context more abstractly and complexly. Corrad \cite{ubiscom} suggest leave the roles completely and assign permissions to contexts. Both those approaches are interesting in that they somehow compare contexts and make decisions on how similar they are.
+
+Remarkable idea is proposed by Hung \cite{hung}. He proposes three entities in security rules - object, user and activity. All of the entities have some credentials. If user want to perform action on object he needs to poses credentials required for both object and activity.
+
+Another interesting idea is described by Wendong \cite{wendong}. He suggest adding user security level in addition to RBAC and define needed security levels to perform actions.
+
+\section{Proposed Solution}
+
+My super solution
 
 \section{Osnova}
 1. Intro - co je security, proc je dulezity pro aplikace, proc je stavajici security spatna, jake ekonomicke nevyhody nese, jak husta je security co bere v potaz kontext, ze to ukazu na RBAC
@@ -215,14 +231,54 @@ The authors are asked to pay special attention to the form of references. The NA
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR REFERENCES
 \begin{thebibliography}{9}
-\bibitem{paper}
-JAKUBOV\'A, I., RAIDA, Z. Exemplary Document for the paper in Radioengineering. \emph{Radioengineering}, 2006, vol. 15, no. 1, p. 1 - 2.
-\bibitem{book}
-AUTHOR, F., AUTHOR, S., AUTHOR, T. F. \emph{The Book}. 2nd ed. Humpolec: Nupish\&Publish, 1901.
-\bibitem{article}
-HUSN\'IK, L., LHOTSK\'A, L. About Poster 2005. In \emph{Proceedings of the 9th International Student Conference on Electrical Engineering POSTER 2005}. Prague (Czech Republic), 2005, p. 1 - 2.
+\bibitem{grbac}
+Matthew J Moyer, and M Abamad. Generalized role-based access control. In: Dis-
+tributed Computing Systems, 2001. 21st International Conference on.. 2001. 391–
+398.
+\bibitem{envroles}
+Michael J Covington, Wende Long, Srividhya Srinivasan, Anind K Dev, Mustaque
+Ahamad, and Gregory D Abowd. Securing context-aware applications using en-
+vironment roles. In: Proceedings of the sixth ACM symposium on Access control
+models and technologies. 2001. 10–20.
+\bibitem{contextroles}
+Seon-Ho Park, Young-Ju Han, and Tai-Myoung Chung. Context-role based access
+control for context-aware application. 2006.
+\bibitem{contextaccess}
+Goran Sladi/'c, Branko Milosavljevi/'c, and Zora Konjovi/'c. Context-sensitive access
+control model for business processes. Computer Science and Information Sys-
+tems/ComSIS. 2013, 10 (3), 939–972.
+\bibitem{contextawarerbac}
+Devdatta Kulkarni, and Anand Tripathi. Context-aware role-based access control
+in pervasive computing systems. In: Proceedings of the 13th ACM symposium on
+Access control models and technologies. 2008. 113–122.
+\bibitem{xorbac}
+Gustaf Neumann, and Mark Strembeck. An approach to engineer and enforce con-
+text constraints in an RBAC environment. In: Proceedings of the eighth ACM sym-
+posium on Access control models and technologies. 2003. 65–79.
+\bibitem{genericcontext}
+Ghita Kouadri Most\'efaoui, and Patrick Br\'ezillon. A generic framework for context-
+based distributed authorizations. 2003.
+\bibitem{ubiscom}
+A Corrad, Rebecca Montanari, and Daniela Tibaldi. Context-based access control
+management in ubiquitous environments. In: Network Computing and Applications,
+2004.(NCA 2004). Proceedings. Third IEEE International Symposium on. 2004.
+253–260.
+\bibitem{contextlayer}
+Joao Carlos D Lima, Cristiano C Rocha, Iara Augustin, and Mário AR Dan-
+tas. A Context-Aware Recommendation System to Behavioral Based Authentication
+in Mobile and Pervasive Environments. In: Embedded and Ubiquitous Computing
+(EUC), 2011 IFIP 9th International Conference on. 2011. 312–319.
+\bibitem{hung}
+Le Xuan Hung, J Hassan, AS Riaz, SMK Raazi, Y Weiwei, Ngo Trong Canh, Phan
+Tran Ho Truc, Sungyoung Lee, Heejo Lee, Yuseung Son, and others. Activity-
+based security scheme for ubiquitous environments. In: Performance, Computing
+and Communications Conference, 2008. IPCCC 2008. IEEE International. 2008.
+475–481.
+\bibitem{wendong}
+Zhang Wendong, and Zhang Kaiji. A role-based workflow access control model.
+In: Education Technology and Computer Science, 2009. ETCS’09. First Interna-
+tional Workshop on. 2009. 1136–1139.
 \end{thebibliography}
-
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR AUTHOR CV
