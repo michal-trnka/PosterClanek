@@ -30,6 +30,12 @@ INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
 INPUT poster2015template.aux
 INPUT poster2015template.aux
 OUTPUT poster2015template.aux
