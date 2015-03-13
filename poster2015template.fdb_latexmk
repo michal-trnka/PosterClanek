@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1426199012 "poster2015template.tex" "poster2015template.pdf" "poster2015template" 1426199013
+["pdflatex"] 1426254372 "poster2015template.tex" "poster2015template.pdf" "poster2015template" 1426254372
   "/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -24,6 +24,7 @@
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1136849748 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
@@ -61,6 +62,7 @@
   "/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty" 1335995445 7075 bd0c34fbf1ae8fd1debd2a554e41b2d5 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty" 1335995445 22417 c74ff4af6a1aa2b65d1924020edbbe11 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def" 1306616590 55368 3c8a0d99822330f2dfabc0dfb09ce897 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd" 1137110629 576 95c2c0baea9c719a4be29a3d4122498b ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd" 1137110629 985 1ed784d7bfe47179f3550d2303b073f8 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1phv.fd" 1137110629 1684 0ac4554419e828cf2c810306539da167 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
@@ -70,9 +72,9 @@
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1415730175 3847284 6bfef453fcc97b67e55b51b7fda4e538 ""
   "/usr/local/texlive/2014/texmf.cnf" 1415730152 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "poster15.cls" 1413881756 6753 047b5a2cce3b6f4d4e8b81bbaa3a22a3 ""
-  "poster2015template.aux" 1426199013 889 444c1a4d9714eac03fb68236c056e368 ""
-  "poster2015template.tex" 1426199011 18979 f32e016649af1f04d87459ca00c3b1c1 ""
+  "poster2015template.aux" 1426254372 893 4f0ad3304bed5077e14ccebdc169bc3a ""
+  "poster2015template.tex" 1426254370 19464 92039e2f5e2865dae62db9ac39160ca4 ""
   (generated)
-  "poster2015template.log"
   "poster2015template.pdf"
+  "poster2015template.log"
   "poster2015template.aux"

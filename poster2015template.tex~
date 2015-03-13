@@ -13,7 +13,7 @@
 %\usepackage{psfrag}
 %\usepackage{amsmath}
 %\usepackage{pifont,amssymb}
-
+\usepackage{listings}
 \begin{document}
 %----------------------------------------------------------
 
@@ -65,9 +65,7 @@ Paper formatting, Poster2015, electronic publishing, templates, styles.
 
 \section{Introduction}
 
-Currently there can be seen move toward context aware application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users.
-
-However securing the applications is done the old way. Mostly users got some roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
+Currently there can be seen move toward context aware application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users. However securing the applications is done the old way. Mostly users got some roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
 
 Applications using context aware security can be much less obtrusive for users. They can be asked for different authentication methods based on context, they can be authorized for same resource various ways depending on their context. They can even sometimes omit authentication because their context is trustworthy by itself (for example access from inner company network). Same as the users can profit from the context based authentication operators of the applications. They might define more strict security rules for suspicious users behavior (for example access to confidential resources in system from internet in night). Using context allows system administrators for more fine grained security rules which would be otherwise unsustainable for maintenance. 
 
@@ -109,15 +107,17 @@ Another interesting idea is described by Wendong \cite{wendong}. He suggest addi
 
 \section{Proposed Solution}
 
-1. popsat, ze musim udelat reseni, ktere se snadno zapoji do vsech ostatnich architektur
+Security policies in organizations are very consistent and are changing just slightly over the time. Most of the organizations does not want and even need any radical change. Therefore CA security must be another logical step to evolve current security. This will allow us to build new security rules on existing and well proved solution.
 
-2. pridani levelu uzivately podle kontextu
+I propose create security level which is based on context in addition to traditional roles in RBAC. Level can be understood as it quantifies how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
 
-3. level se urci pri prihlaseni, neni duvod zkoumat casteji
+As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There is several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
 
-4. popsat moznost vice context resolveru
+Resolving level is done by context resolvers. Each resolver takes responsibility for checking one particular part of context. For example one resolver would determine network which user came from. Another would check time of the day and so on. Every resolver would return which level it grants to user. The level does not need to be set in resolver and it decide just if to give it or not, the resolver itself can decide which level to grant. After every resolver performs its inner logic and determines level on its own the highest level is used as the final user's security level.
 
-5. level je abstraktni, popsat moznost pouzit i vyctu a musi se dat jen comparovat, implementace neni dulezita
+Level representation by itself is very abstract. Only need for level is to be comparable with other levels to know if given level is higher or lower then required one and also to determine the highest one. Therefore it is not important whether level is represented by number, string or even some more complex structure. This leaves a lot of space for customization for given application.
+
+
 
 6. popsat ze to je lightweight, easy to use, voluntary, scalable
 
