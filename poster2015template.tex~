@@ -14,6 +14,8 @@
 %\usepackage{amsmath}
 %\usepackage{pifont,amssymb}
 \usepackage{listings}
+
+
 \begin{document}
 %----------------------------------------------------------
 
@@ -65,37 +67,42 @@ Paper formatting, Poster2015, electronic publishing, templates, styles.
 
 \section{Introduction}
 
-Currently there can be seen move toward context aware application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users. However securing the applications is done the old way. Mostly users got some roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
+Currently there can be seen move toward context aware (CA) application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users. However securing the applications is done the old way. Usually users are assigned various roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications, which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
 
-Applications using context aware security can be much less obtrusive for users. They can be asked for different authentication methods based on context, they can be authorized for same resource various ways depending on their context. They can even sometimes omit authentication because their context is trustworthy by itself (for example access from inner company network). Same as the users can profit from the context based authentication operators of the applications. They might define more strict security rules for suspicious users behavior (for example access to confidential resources in system from internet in night). Using context allows system administrators for more fine grained security rules which would be otherwise unsustainable for maintenance. 
+Applications using CA security can be much less obtrusive for users. They can be asked for different authentication methods based on context, they can be authorized for same resource various ways depending on their context. They can even sometimes omit authentication because their context is trustworthy by itself (for example access from inner company network). Same as the users can profit from the context based authentication operators of the applications. They might define more strict security rules for suspicious users behavior (for example access to confidential resources in system from internet in night). Using context allows system administrators for more fine grained security rules, which would be otherwise unsustainable for maintenance. 
 
-Application operators and software developers are good aware of the added value of context aware security. Even there are various proposals how to do context aware security none of them is widely used. Reason why they are not widely used can be that they are either too complicated or they are too innovative and it is hard to incorporate them into existing solutions.
+Application operators and software developers are good aware of the added value of CA security. Even there are various proposals how to do CA security none of them is widely used. Reason why they are not widely used can be that they are either too complicated or they are too innovative and it is hard to incorporate them into existing solutions.
 
-In this paper I will present solution which extends standard role based security architecture with context aware elements. This extension is based on giving users security level based on their context. Resources would require user to posses that level in addition to his normal rights to be accessed. That way we can extend any existing security architecture with context aware elements.
+In this paper I will present solution, which extends standard role based security architecture with CA elements. This extension is based on giving users security level based on their context. Resources would require user to posses that level in addition to his normal rights to be accessed. That way we can extend any existing security architecture with CA elements.
 
 \section{Background}
 
-Large applications or information systems which has more then one user needs some form of authentication and authorization. Such systems are here for many decades and are almost as old as computers itself. Therefore for many decades there exist problem with security applications and it was solved various ways.
+Large applications or information systems, which has more then one user needs some form of authentication and authorization. Such systems are here for many decades and are almost as old as computers itself. Therefore for many decades there exist problem with security applications and it was solved various ways.
 
-Two of the oldest principles for securing application resources is mandatory access control (MAC) and discretionary access control (DAC). Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
+Two of the oldest principles for securing application resources is mandatory access control (MAC) and discretionary access control (DAC). Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority, which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
 
 However granting permissions to every user in system is unpractical for larger amount of users. Role based access control (RBAC) provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
 
 Nevertheless those authorization principles and method are very static. They does not reflect the changing state of the system and users. Once they are set they do not take in account any other factors and any fine tuning is if not impossible very difficult.
 
-Context aware security can overcome those difficulties and provide even new experience for user and application operator. Context aware applications are much more personalized then the static ones and same comes for the security. Application can get a lot of information about user from context and therefore it does not annoy user with request for additional information. For example application knows his IP address and therefore does not need to re-verify him. The context is also valuable source of information for application owner. For example he might restrict some IP ranges, days of time, etc to access resources in application. 
+CA security can overcome those difficulties and provide even new experience for user and application operator. CA applications are much more personalized then the static ones and same comes for the security. Application can get a lot of information about user from context and therefore it does not annoy user with request for additional information. For example application knows his IP address and therefore does not need to re-verify him. The context is also valuable source of information for application owner. For example he might restrict some IP ranges, days of time, etc to access resources in application. 
 
-Also with the emerge of the context aware application there is naturally need of context aware security. ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs
+Also with the emerge of the context aware application there is naturally need of CA security. ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs
 
-To illustrate how can context aware security improve applications consider following example. We have a information system in company. To make it more comfortable let users from inner company network access some noncritical resources. But if the user comes from internet or access some sensitive resources he needs to authenticate itself normal way. But not only users would benefit from it. Context aware security can determine suspicious users behavior. For example if users log in to system in short time frame from different parts of world it can rise flag and the incident can be investigated further. Or the company can set some access hours for various resources, to limit possibility of their abuse (for example limit access in non working hours).
+To illustrate how can context aware security improve applications consider following example. We have a information system in company. To make it more comfortable let users from inner company network access some noncritical resources. But if the user comes from internet or access some sensitive resources he needs to authenticate itself normal way. But not only users would benefit from it. CA security can determine suspicious users behavior. For example if users log in to system in short time frame from different parts of world it can rise flag and the incident can be investigated further. Or the company can set some access hours for various resources, to limit possibility of their abuse (for example limit access in non working hours).
 
 \section{Related Work}
 
 There has been multiple attempts to extend classic role based access control with context-aware elements and make RBAC more fine-grained.
 
+\lstset{language=Pascal}  
+\begin{lstlisting}
+  //procedure
+\end{lstlisting}
+
 One of the approaches is to add another set of roles to role based access control. Moyer \cite{grbac} proposes creating two additional sets of object roles and environmental roles and tying permissions with trio of roles. Covington \cite{envroles} simplify that to just one additional set of environmental roles. They are hierarchical composed and represent current state of system. Similarly to this approach Seon-Ho \cite{contextroles} suggests additional set of context roles.
 
-Different solution proposes Sladi\'c \cite{contextaccess}. Roles are granted to user after his authentication based on context. That way user can obtain new roles based on context. The idea is further developed by Kulkarni \cite{contextawarerbac} into Context-Aware RBAC. It also allows roles to be granted based on context but there is second layer of authorization architecture which is responsible for granting and revoking roles when the context changes and therefore roles are dynamically reflecting context.
+Different solution proposes Sladi\'c \cite{contextaccess}. Roles are granted to user after his authentication based on context. That way user can obtain new roles based on context. The idea is further developed by Kulkarni \cite{contextawarerbac} into Context-Aware RBAC. It also allows roles to be granted based on context but there is second layer of authorization architecture, which is responsible for granting and revoking roles when the context changes and therefore roles are dynamically reflecting context.
 
 There is also possibility to solve that problem with adding another element not based on roles. Neumann \cite{xorbac} suggests adding context constrains to security policies. When the permission is checked used needs to posses not only the permission for resource (based on his role) but also fulfill context constrains. Similar approach by Most\'efaoui \cite{genericcontext} proposes that security rules should consist of four elements - permission, role, context and authentication method.
 
@@ -109,39 +116,42 @@ Another interesting idea is described by Wendong \cite{wendong}. He suggest addi
 
 Security policies in organizations are very consistent and are changing just slightly over the time. Most of the organizations does not want and even need any radical change. Therefore CA security must be another logical step to evolve current security. This will allow us to build new security rules on existing and well proved solution.
 
-I propose create security level which is based on context in addition to traditional roles in RBAC. Level can be understood as it quantifies how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
+I propose create security level, which is based on context in addition to traditional roles in RBAC. Level can be understood as it quantifies how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
 
-As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There is several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
+As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There are several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
 
-Resolving level is done by context resolvers. Each resolver takes responsibility for checking one particular part of context. For example one resolver would determine network which user came from. Another would check time of the day and so on. Every resolver would return which level it grants to user. The level does not need to be set in resolver and it decide just if to give it or not, the resolver itself can decide which level to grant. After every resolver performs its inner logic and determines level on its own the highest level is used as the final user's security level.
+Resolving level is done by context resolvers. Each resolver takes responsibility for checking one particular part of context. For example one resolver would determine network, which user came from. Another would check time of the day and so on. Every resolver would return, which level it grants to user. The level does not need to be set in resolver and it decide just if to give it or not, the resolver itself can decide, which level to grant. After every resolver performs its inner logic and determines level on its own the highest level is used as the final user's security level.
 
 Level representation by itself is very abstract. Only need for level is to be comparable with other levels to know if given level is higher or lower then required one and also to determine the highest one. Therefore it is not important whether level is represented by number, string or even some more complex structure. This leaves a lot of space for customization for given application.
 
+The proposed solution has many advantages. The most important ones are:
 
+\begin{itemize}
+  \item Lightweight - it does not require any complex structures in application nor it does not consume significant system resources.
+  
+  \item Easy to use - it just requires adding another type of constrain to resources that need to poses CA security.
+  
+  \item Voluntary - if someone wants to use plain RBAC he can and just to chosen resources he might add level restrictions. 
+  
+  \item Scalable - there is not any predefined set of levels nor there is no limit in amount of levels in application.
+  
+  \item Universal - the solution can be modified and used with other security architectures, not just with RBAC.
+\end{itemize}
 
-6. popsat ze to je lightweight, easy to use, voluntary, scalable
+However the solution poses few limitations, which needs to be worked further on. Among them the most significant are:
+\begin{itemize}
+  \item Hard to determine exact context - sometimes can happen that some resource should be accessible just from given context. For example some resources are accessible only during the day and some just during the night. Such scenario is impossible to secure with proposed solution.
+  
+  \item Levels are linear - structure of the levels is strictly linear and therefore it is impossible to build some tree or even more complex structure of levels. Often happen that there are multiple context rules, which are granted different set of right. Levels can't model for example geographical situation when users from same state have some rights but people in different location of the state got additional specialized rights.
+\end{itemize}
 
-7. nevyhody - levely jsou linearni, neumi vytvorit strom, nebo jinou strukturu, tezko se urci pravidla jen pro dany kontext
+\section{Conclusion}
 
-? showcase aplikace
+1 - Jak se to ma ted
 
-\section{Osnova}
-1. Intro - co je security, proc je dulezity pro aplikace, proc je stavajici security spatna, jake ekonomicke nevyhody nese, jak husta je security co bere v potaz kontext, ze to ukazu na RBAC
+2 - Co jsem vymyslel
 
-2 - Background - vysvetleni kontextu, co je MAC/DAC, co je RBAC, detailnejs popsat jak kontextova security pomuze jak uzivately, tak provozovately systemu
-
-3 - Related work - z diplomky mam 7 praci, najit dalsi?
-
-4. Vlastni obsah - resit pomoci levelu - popsat svoje reseni (a na RACS nechat to, ze autentizacni metoda je cast kontextu?)
-
-Koment od Tomase:
-1 ma rici co je problem a co vlastne resis, i naznacit co prinese tve reseni
-2. ano, ac mel by jsi stavet na tom ze exituje nejaka obtiz, a jak ji pomohou resit tyto typy zabezpeceni
-3. ok
-4. zde rici i jak to resi problem, jake to ma vyhody a naznacit i omezeni ci co to nedela
-4. pokud lze neco oddelit a nechat to na RACS pak idealni.
-5. shrnuti
-
+3 - Co chci zlepsit dal
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR  ACKNOWLEDGEMENTS

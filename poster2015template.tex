@@ -14,29 +14,30 @@
 %\usepackage{amsmath}
 %\usepackage{pifont,amssymb}
 \usepackage{listings}
+
+
 \begin{document}
 %----------------------------------------------------------
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE OF THE TITLE
 %
-\title{Sample Paper for Poster 2015 Conference \\ for \LaTeX}
+\title{Context Aware Role Based Access Control Using Security Levels}
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR THE AUTHORS NAMES AND THE TITLE FOR HEADINGS
 %
-\headtitle{F. S. AUTHOR, S. S. AUTHOR, SAMPLE PAPER FOR POSTER 2015 CONFERENCE}
+\headtitle{Michal TRNKA, Context Aware Role Based Access Control Using Security Levels}
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR THE AUTHORS NAMES - ALL AUTHORS MUST HAVE A STUDENT STATUS!!!
 
 %
-\author{First Student AUTHOR\affiliationmark{1}, Second Student AUTHOR\affiliationmark{2}}
+\author{Michal TRNKA}
 %----------------------------------------------------------
 %              THIS IS THE PLACE FOR AFFILIATIONS
 %
 \affiliation{%
-\affiliationmark{1}Dept. of Radioelectronics, Czech Technical University, Technick\'a 2, 166 27 Praha, Czech Republic \\
-\affiliationmark{2}Dept. of Physics, Another University, Another Street 123, Another City, Another Country}
-  \email{First.author@fel.cvut.cz, secauthor@supermail.com}
+Dept. of Computer Science and Engineering, Czech Technical University, Technick ́a 2, 166 27 Praha, Czech Republic}
+  \email{trnkami1@fel.cvut.cz}
 %--------------------------------------------------------------
 
 
@@ -46,18 +47,14 @@
 %               THIS IS THE PLACE FOR ABSTRACT
 
 \begin{abstract}
-The abstract of the paper brings very brief information about the contents of the paper. The abstract should not be shorter than 80 words and should not exceed 200 words. For the text of the abstract use the environment \verb+abstract+.
-
-For typing the paper in \LaTeX{} use the documentclass \verb+poster15+, the basic commands and environments are redefined according to the specific conference format.
-
-For the title of the paper use the command \verb+\title{}+. The name, the affiliation, and the e-mail address of the author(s) are of the styles \verb+author{}+, \verb+\affiliation{}+ and \verb+\email{}+. The affiliation is required being specified as shown in this example. All authors must have a student status! \textbf{Failure to comply with this rule may lead to rejection of the paper}.
+Security of applications is very challenging and extensive problem. To keep with the the trend of personalized applications and with increased interest in context aware applications it needs to be adapted for those applications. It this paper I present how to add context awareness elements into role based access control. I describe already existing solutions and point out their key ideas and I propose own solution, which is very lightweight, universal and allows instant enhancement of current RBAC even in current applications. The solution is based on security levels which are assigned to users based on context. Security levels represents how the users can be trusted and are determined during users login procedure. The levels are used as additional security constrain so to access resources in application user need to have not only right permission granted through roles, but also to have corresponding level.
 \end{abstract}
 
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR KEYWORDS
 \begin{keywords}
-Paper formatting, Poster2015, electronic publishing, templates, styles.
+Role based access control, Context-aware security, Security, Security levels.
 \end{keywords}
 
 %----------------------------------------------------------
@@ -65,7 +62,7 @@ Paper formatting, Poster2015, electronic publishing, templates, styles.
 
 \section{Introduction}
 
-Currently there can be seen move toward context aware (CA) application. It is caused by emerge of the huge amount of the mobile technologies and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context. That brings completely new experience for the applications operators as well as for users. However securing the applications is done the old way. Usually users are assigned various roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications, which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
+Contemporary applications move toward context-awareness \cite{context,tomas1}. It is caused by emerge of the large amount of the mobile technologies \cite{mobilecontext} and users demand for personalized applications. Applications provide personalized context based on user's context or the application's context \cite{personalizedcontext}. That brings completely new experience for the applications operators as well as for users. However securing the applications is done the old way. Usually users are assigned various roles in applications or permissions for resources and those security rules are independent on context. There is very few, if any, applications, which has security based on context. We can expect that users and application owners would take advantage of application security based on context to provide specific security rules based on users context.
 
 Applications using CA security can be much less obtrusive for users. They can be asked for different authentication methods based on context, they can be authorized for same resource various ways depending on their context. They can even sometimes omit authentication because their context is trustworthy by itself (for example access from inner company network). Same as the users can profit from the context based authentication operators of the applications. They might define more strict security rules for suspicious users behavior (for example access to confidential resources in system from internet in night). Using context allows system administrators for more fine grained security rules, which would be otherwise unsustainable for maintenance. 
 
@@ -75,17 +72,17 @@ In this paper I will present solution, which extends standard role based securit
 
 \section{Background}
 
-Large applications or information systems, which has more then one user needs some form of authentication and authorization. Such systems are here for many decades and are almost as old as computers itself. Therefore for many decades there exist problem with security applications and it was solved various ways.
+Large applications or information systems, which has more then one user needs some form of authentication and authorization. Such systems are here for many decades and are almost as old as computers itself. For example proposal for information system called Memex is mentioned in 1945 \cite{memex}. Therefore for many decades there exists problem with security of applications and it was solved various ways.
 
-Two of the oldest principles for securing application resources is mandatory access control (MAC) and discretionary access control (DAC). Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority, which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
+Two of the oldest principles for securing application resources is mandatory access control (MAC) \cite{accesscontrol} and discretionary access control (DAC) \cite{accesscontrol}. Those two principles does not define how the application security should be implemented, but rather define core principles in authorization. In MAC there is some authority, which grants permissions to all resources. In DAC on the other side can grant permission everyone with sufficient permission for the resource.
 
-However granting permissions to every user in system is unpractical for larger amount of users. Role based access control (RBAC) provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
+However granting permissions to every user in system is unpractical for larger amount of users. Role based access control (RBAC) \cite{rbac} provides another level of abstraction. It that approach the permission is given to an abstract role and users are assigned roles. Typically there is in application many times less roles then permissions and the roles does not change significantly over time unlike users.
 
 Nevertheless those authorization principles and method are very static. They does not reflect the changing state of the system and users. Once they are set they do not take in account any other factors and any fine tuning is if not impossible very difficult.
 
 CA security can overcome those difficulties and provide even new experience for user and application operator. CA applications are much more personalized then the static ones and same comes for the security. Application can get a lot of information about user from context and therefore it does not annoy user with request for additional information. For example application knows his IP address and therefore does not need to re-verify him. The context is also valuable source of information for application owner. For example he might restrict some IP ranges, days of time, etc to access resources in application. 
 
-Also with the emerge of the context aware application there is naturally need of CA security. ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs ADD DATA ABOUT CONTEXT AWARE APPs
+Also with the emerge of the context aware application there is naturally need of CA security. Ideas about CA applications are here since 90's \cite{contextaware}. Such CA applications adapts according to the location and time of user, the collection of nearby people, hosts, accessible devices, etc, as well as to changes to such things over time. A system with these capabilities can examine the user's environment as well as computing environment and react to changes to environment. Naturally such application needs security architecture which adopts all of the above mentioned principles to be fully CA. However there is now significant lack of standardized methods or best practices how to address problem of the CA security.
 
 To illustrate how can context aware security improve applications consider following example. We have a information system in company. To make it more comfortable let users from inner company network access some noncritical resources. But if the user comes from internet or access some sensitive resources he needs to authenticate itself normal way. But not only users would benefit from it. CA security can determine suspicious users behavior. For example if users log in to system in short time frame from different parts of world it can rise flag and the incident can be investigated further. Or the company can set some access hours for various resources, to limit possibility of their abuse (for example limit access in non working hours).
 
@@ -107,15 +104,21 @@ Another interesting idea is described by Wendong \cite{wendong}. He suggest addi
 
 \section{Proposed Solution}
 
-Security policies in organizations are very consistent and are changing just slightly over the time. Most of the organizations does not want and even need any radical change. Therefore CA security must be another logical step to evolve current security. This will allow us to build new security rules on existing and well proved solution.
+Security policies in organizations are very consistent and are changing just slightly over the time. Most of the organizations does not want and even does not need any radical change. Therefore CA security must be another logical step to evolve current security. This will allow us to build new security rules on existing and well proved solution and it also makes the solution more accessible for people who are familiar with current solutions.
 
-I propose create security level, which is based on context in addition to traditional roles in RBAC. Level can be understood as it quantifies how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
+I propose create security level, which is based on context in addition to traditional roles in RBAC. Level can be understood as quantification how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
+%\lstset{language=Java,caption={Descriptive Caption Text},label=DescriptiveLabel}
+%\raggedbottom
+%\begin{lstlisting}[frame=single]
+%  dummy text pretending being useful code
+%\end{lstlisting}
 
-As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There is several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
 
-Resolving level is done by context resolvers. Each resolver takes responsibility for checking one particular part of context. For example one resolver would determine network, which user came from. Another would check time of the day and so on. Every resolver would return, which level it grants to user. The level does not need to be set in resolver and it decide just if to give it or not, the resolver itself can decide, which level to grant. After every resolver performs its inner logic and determines level on its own the highest level is used as the final user's security level.
+As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There are several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
 
-Level representation by itself is very abstract. Only need for level is to be comparable with other levels to know if given level is higher or lower then required one and also to determine the highest one. Therefore it is not important whether level is represented by number, string or even some more complex structure. This leaves a lot of space for customization for given application.
+Resolving level is done by context resolvers. Each resolver takes responsibility for checking one particular part of context. For example one resolver would determine network, which user came from. Another would check time of the day and so on. Every resolver would return, which level it grants to user. As the security resolver is written withing application it has access to users information (e.g. his request, information about him stored in database, etc) as well as it can use information about the application (e.g. number of requests, number of users) and even about the machine the application is running on (e.g. load of the machine, location of the server). The level does not need to be set in resolver and it does not decide just if to give it or not, the resolver itself makes decision, which level to grant. After every resolver performs its inner logic and determines level on its own the highest level is used as the final user's security level.
+
+Level representation by itself is very abstract. Only need for level is to be comparable with other levels to know if given level is higher or lower then required one and also to determine the highest one. Therefore it is not important whether level is represented by number, string or even some more complex structure. This leaves a lot of space for customization for a given application.
 
 The proposed solution has many advantages. The most important ones are:
 
@@ -140,79 +143,67 @@ However the solution poses few limitations, which needs to be worked further on.
 
 \section{Conclusion}
 
-1 - Jak se to ma ted
+In this paper I focused on the area of the CA security with focus on RBAC architecture. As is covered by related works the main issue of CA security is no standardized nor effective best practice. There are multiple approaches how to add CA elements into RBAC. However they suffer from multiple inconveniences. They are either too complicated and therefore they significantly decreases one of main advantage of RBAC which lays in its simplicity to maintain and develop. In some cases they also demands a lot of computational resources or even change the RBAC so extensively that it can be hardly called RBAC anymore.
 
-2 - Co jsem vymyslel
+I introduced a innovative solution based on adding another security constrain beside classic permissions tied to roles. The constrain is called security level and it is based on a context. Basically level describes how much user can be trusted. To access resource in application user is required not only to posses permission through roles but also to have corresponding security level. This approach keeps advantages of RBAC and extends them further with CA elements. Even the solution has some flaws its advantages makes up for it. 
 
-3 - Co chci zlepsit dal
+In future I want to focus on transfer of security levels to other security architectures because the solution seems to be very flexible and I want to utilize advantaged of the described solution as much as possible. Apart from that I will explore options how to overcome linearity of the levels and how to model more complex context security constrains and generally reduce downsides of the proposed work.
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR  ACKNOWLEDGEMENTS
 \section*{Acknowledgements}
-Research described in the paper was supervised by Prof. A. Supervisor, FEE CTU in Prague and supported by the Czech Grant Agency under grant No. 102/ 01/9999, by the Czech Ministry of Education under grant No. 9999/2002 and by the research program MSM 444222.
+Research described in the paper was supported by the
+Grant Agency of the Czech Technical University in Prague, under grant No. SGS14/198/OHK3/3T/13.
 
-The headline \emph{Acknowledgements} is of the  style \verb+\section*{}+.
-
-The authors are asked to pay special attention to the form of references. The NAMES OF AUTHORS should be typed in capitals, the \emph{Titles of Journals, Books or Proceedings} in italics with the first capital letter in all significant words. The tittles of articles are typed similarly as the basic text without the first capital letter in all words. Use the standart environment \verb+thebibliography+.
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR REFERENCES
 \begin{thebibliography}{9}
+\bibitem{context}
+ABOWD, Gregory D; DEY, Anind K; BROWN, Peter J; DAVIES, Nigel; SMITH, Mark; STEGGLES Pete. Towards a better understanding of context and context-awareness. In: Handheld and ubiquitous computing. 1999. 304–307.
+\bibitem{tomas1}
+MACIK Miroslav; CERNY Tomas; SLAVIK, Pavel. Context-sensitive, cross-platform user interface generation. Journal on Multimodal User Interfaces 8, no. 2 (2014): 217-229.
+\bibitem{mobilecontext}
+HARTER, Andy; HOPPER Andy; STEGGLES, Pete; WARD, Andy; WEBSTER, Paul. The anatomy of a context-aware application. Wireless Networks 8, no. 2/3 (2002): 187-197.
+\bibitem{personalizedcontext}
+HONG, Jongyi; SUH, Eui-Ho; KIM, Junyoung; KIM, SuYeon. Context-aware system for proactive personalized service based on context history. Expert Systems with Applications 36, no. 4 (2009): 7448-7457.
+\bibitem{memex}
+BUSH, Vannevar and As We May Think. "The atlantic monthly." As we may think 176.1 (1945): 101-108.
+\bibitem{accesscontrol}
+SANDHU, Ravi. Access control: The neglected frontier. In: Information Security and Privacy. 1996. 219–227.
+\bibitem{rbac}
+HITCHENS, M.; VARADHARAJAN, V. Design and specification of role based access control policies. Software, IEE Proceedings -. 2000, 147 (4), 117-129. DOI 10.1049/ip-sen:20000792.
+\bibitem{contextaware}
+SCHILIT, Bill; NORMAN Adams; WANT, Roy. "Context-aware computing applications." In Mobile Computing Systems and Applications, 1994. WMCSA 1994. First Workshop on, pp. 85-90. IEEE, 1994.
 \bibitem{grbac}
-Matthew J Moyer, and M Abamad. Generalized role-based access control. In: Dis-
-tributed Computing Systems, 2001. 21st International Conference on.. 2001. 391–
-398.
+MATTHEW, Moyer; ABAMAD, Mustaque. Generalized role-based access control. In: Distributed Computing Systems, 2001. 21st International Conference on., pp. 391-398. IEEE, 2001.
 \bibitem{envroles}
-Michael J Covington, Wende Long, Srividhya Srinivasan, Anind K Dev, Mustaque
-Ahamad, and Gregory D Abowd. Securing context-aware applications using en-
-vironment roles. In: Proceedings of the sixth ACM symposium on Access control
-models and technologies. 2001. 10–20.
+COVINGTON, Michael J.; LONG, Wende; SRINIVASAN, Srividhya; DEV, Anind K.; AHAMAD, Mustaque; ABOWD, Gregory D. Securing context-aware applications using environment roles. In: Proceedings of the sixth ACM symposium on Access control models and technologies. 2001. 10–20.
 \bibitem{contextroles}
-Seon-Ho Park, Young-Ju Han, and Tai-Myoung Chung. Context-role based access
-control for context-aware application. 2006.
+PARK, Seon-Ho; HAN, Young-Ju; CHUNG, Tai-Myoung. Context-role based access control for context-aware application. In High Performance Computing and Communications, pp. 572-580. Springer Berlin Heidelberg, 2006.
 \bibitem{contextaccess}
-Goran Sladi/'c, Branko Milosavljevi/'c, and Zora Konjovi/'c. Context-sensitive access
-control model for business processes. Computer Science and Information Sys-
-tems/ComSIS. 2013, 10 (3), 939–972.
+SLADI\'C, Goran; MILOSAVLJEVI\'C, Branko; KONJOVIC\'C, Zora. Context-sensitive access control model for business processes. Computer Science and Information Systems/ComSIS. 2013, 10 (3), 939–972.
 \bibitem{contextawarerbac}
-Devdatta Kulkarni, and Anand Tripathi. Context-aware role-based access control
-in pervasive computing systems. In: Proceedings of the 13th ACM symposium on
-Access control models and technologies. 2008. 113–122.
+KULKARNI, Devdatta; TRIPATHI, Anand. Context-aware role-based access control in pervasive computing systems. In: Proceedings of the 13th ACM symposium on Access control models and technologies. 2008. 113–122.
 \bibitem{xorbac}
-Gustaf Neumann, and Mark Strembeck. An approach to engineer and enforce con-
-text constraints in an RBAC environment. In: Proceedings of the eighth ACM sym-
-posium on Access control models and technologies. 2003. 65–79.
+NEUMANN, Gustaf; STREMBECK, Mark. An approach to engineer and enforce context constraints in an RBAC environment. In: Proceedings of the eighth ACM symposium on Access control models and technologies. 2003. 65–79.
 \bibitem{genericcontext}
-Ghita Kouadri Most\'efaoui, and Patrick Br\'ezillon. A generic framework for context-
-based distributed authorizations. 2003.
+MOST\'EFAOUI, Ghita Kouadri; BR\'EZILLON, Patrick. A generic framework for contextbased distributed authorizations. In Modeling and Using Context, pp. 204-217. Springer Berlin Heidelberg, 2003.
 \bibitem{ubiscom}
-A Corrad, Rebecca Montanari, and Daniela Tibaldi. Context-based access control
-management in ubiquitous environments. In: Network Computing and Applications,
-2004.(NCA 2004). Proceedings. Third IEEE International Symposium on. 2004.
-253–260.
+CORRAD, Antonio; MONTANARI, Rebecca; TIBALDI, Daniela. Context-based access control management in ubiquitous environments. In: Network Computing and Applications, 2004.(NCA 2004). Proceedings. Third IEEE International Symposium on. 2004. 253–260.
 \bibitem{contextlayer}
-Joao Carlos D Lima, Cristiano C Rocha, Iara Augustin, and Mário AR Dan-
-tas. A Context-Aware Recommendation System to Behavioral Based Authentication
-in Mobile and Pervasive Environments. In: Embedded and Ubiquitous Computing
-(EUC), 2011 IFIP 9th International Conference on. 2011. 312–319.
+LIMA, Joao Carlos D.; ROCHA, Cristiano C.; AUGUSTIN, Iara; DANTAS, Mário AR. A Context-Aware Recommendation System to Behavioral Based Authentication in Mobile and Pervasive Environments. In: Embedded and Ubiquitous Computing (EUC), 2011 IFIP 9th International Conference on. 2011. 312–319.
 \bibitem{hung}
-Le Xuan Hung, J Hassan, AS Riaz, SMK Raazi, Y Weiwei, Ngo Trong Canh, Phan
-Tran Ho Truc, Sungyoung Lee, Heejo Lee, Yuseung Son, and others. Activity-
-based security scheme for ubiquitous environments. In: Performance, Computing
-and Communications Conference, 2008. IPCCC 2008. IEEE International. 2008.
-475–481.
+XUNG, Le Xuan; HASSAN, J.; RIAZ, AS.; RAAZI, SMK.; WEIWEI, Y.; CANH, Ngo Trong; TRUC, Phan
+Tran Ho; LEE, Sungyoung; LEE, Heejo; SON, Yuseung; and others. Activity-based security scheme for ubiquitous environments. In: Performance, Computing and Communications Conference, 2008. IPCCC 2008. IEEE International. 2008. 475–481.
 \bibitem{wendong}
-Zhang Wendong, and Zhang Kaiji. A role-based workflow access control model.
-In: Education Technology and Computer Science, 2009. ETCS’09. First Interna-
-tional Workshop on. 2009. 1136–1139.
+WENDONG, Zhang; KAIJI, Zhang. A role-based workflow access control model. In: Education Technology and Computer Science, 2009. ETCS’09. First International Workshop on. 2009. 1136–1139.
 \end{thebibliography}
 
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR AUTHOR CV
-\begin{authorcv}{First AUTHOR}
-was born in \dots The biography is typed using the environment \verb+authorcv{First AUTHOR}+. 
-
-For one author, one paragraph of the biography is devoted. The \textbf{Name} of the author is typed in  \verb+\textbf{}+, the \textbf{SURNAME} is written in capitals.  All authors must have a student status!
+\begin{authorcv}{Michal TRNKA}
+received his Bachelor's and Master's degree from Faculty of Electrical Engineering of Czech Technical University in Prague, where he currently studies Ph.D. program. His area of interest is software engineering and especially application security.
 \end{authorcv}
 
 \end{document}
