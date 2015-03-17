@@ -13,7 +13,13 @@
 %\usepackage{psfrag}
 %\usepackage{amsmath}
 %\usepackage{pifont,amssymb}
+\usepackage{listings}
 
+\let\belowcaptionskip\undefined
+\newlength{\belowcaptionskip}
+\setlength{\belowcaptionskip}{0pt}
+
+\renewcommand{\lstlistingname}{Code}
 
 \begin{document}
 %----------------------------------------------------------
@@ -25,18 +31,18 @@
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR THE AUTHORS NAMES AND THE TITLE FOR HEADINGS
 %
-\headtitle{Michal TRNKA, Context Aware Role Based Access Control Using Security Levels}
+\headtitle{M. TRNKA, T. CERNY, Context Aware Role Based Access Control Using Security Levels}
 %----------------------------------------------------------
 %               THIS IS THE PLACE FOR THE AUTHORS NAMES - ALL AUTHORS MUST HAVE A STUDENT STATUS!!!
 
 %
-\author{Michal TRNKA}
+\author{Michal TRNKA, Tomas CERNY}
 %----------------------------------------------------------
 %              THIS IS THE PLACE FOR AFFILIATIONS
 %
 \affiliation{%
 Dept. of Computer Science and Engineering, Czech Technical University, Technick ́a 2, 166 27 Praha, Czech Republic}
-  \email{trnkami1@fel.cvut.cz}
+  \email{trnkami1@fel.cvut.cz, tomas.cerny@fel.cvut.cz}
 %--------------------------------------------------------------
 
 
@@ -106,10 +112,15 @@ Another interesting idea is described by Wendong \cite{wendong}. He suggest addi
 Security policies in organizations are very consistent and are changing just slightly over the time. Most of the organizations does not want and even does not need any radical change. Therefore CA security must be another logical step to evolve current security. This will allow us to build new security rules on existing and well proved solution and it also makes the solution more accessible for people who are familiar with current solutions.
 
 I propose create security level, which is based on context in addition to traditional roles in RBAC. Level can be understood as quantification how is the user trustworthy and it is dynamically tied to user. The security level creates second security constrain beside traditional permission and therefore resources in application now can have two different kind of security rules - classic permission tied with role and security level.
-%\lstset{language=Java,caption={Descriptive Caption Text},label=DescriptiveLabel}
-%\begin{lstlisting}[frame=single]
-%  dummy text pretending being useful code
-%\end{lstlisting}
+
+\lstset{language=Java,caption={Example of using security levels for securing resources},label=Example of usage, captionpos=b, belowskip=1em}
+\begin{lstlisting}[frame=single]
+  @AllowedRoles('admin','manager')
+  @RequiresLevel(3)
+  public Resource getResource(int Id){
+  ...
+  }
+\end{lstlisting}
 
 
 As the context of the user and the application is changing the level needs to reflect that dynamic nature of context. There are several moments when the level can be calculated. First is to calculate level during user's account creation. However this does not reflect dynamic nature of context and therefore is unsuitable. Opposite extreme is to determine level on every security check. This would reflect changing context most reliably but it is too demanding for computational resources and time consuming as the context check might not be trivial. As the best compromise seems to determine level during user's log in into application. It decreases number of context check by several orders and in the same time it provides very accurate snapshot of the user's context. In case the context would be changing rapidly the user can perform relogin or even the application can force new level calculation manually.
@@ -202,6 +213,8 @@ WENDONG, Zhang; KAIJI, Zhang. A role-based workflow access control model. In: Ed
 %               THIS IS THE PLACE FOR AUTHOR CV
 \begin{authorcv}{Michal TRNKA}
 received his Bachelor's and Master's degree from Faculty of Electrical Engineering of Czech Technical University in Prague, where he currently studies Ph.D. program. His area of interest is software engineering and especially application security.
+
+\textbf{Tomas CERNY} received his Bachelor's and Master's degrees from Faculty of Electrical Engineering of Czech Technical University in Prague, and M.S. degree from Baylor University. He is currently an Assistant Professor of Computer Science at Czech Technical University in Prague. He is also a Ph.D. student in Prague. His area of research is software engineering, model-driven development, enterprise application development and networking.
 \end{authorcv}
 
 \end{document}
